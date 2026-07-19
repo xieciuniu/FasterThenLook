@@ -1,6 +1,6 @@
 //
 //  RepairLog.swift
-//  Ride Up
+//  FasterThenLook
 //
 //  Created by Hubert Wojtowicz on 21/06/2026.
 //
@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class RepairLog {
+final class RepairLog {
     var partName: String
     var date: Date
     var mileage: Double
@@ -21,7 +21,7 @@ class RepairLog {
     @Relationship(inverse: \Car.repairLogs)
     var car: Car
 
-    init(
+    init (
         partName: String,
         date: Date,
         mileage: Double,
@@ -30,7 +30,7 @@ class RepairLog {
         photo: Data?,
         linkedMaintenanceItem: MaintenanceItem?,
         car: Car
-    ){
+    ) {
         self.partName = partName
         self.date = date
         self.mileage = mileage

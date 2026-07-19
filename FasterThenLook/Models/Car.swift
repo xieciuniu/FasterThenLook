@@ -1,6 +1,6 @@
 //
 //  Car.swift
-//  Ride Up
+//  FasterThenLook
 //
 //  Created by Hubert Wojtowicz on 21/06/2026.
 //
@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Car {
+final class Car {
     var make: String
     var model: String
     var name: String

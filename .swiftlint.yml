@@ -2,7 +2,8 @@ included:
   - FasterThenLook
 
 excluded:
- # - FasterThenLook/App/ContentView.swift  # remove once it's real
+  - FasterThenLook/Generated/
+  - FasterThenLook/Resources/
 
 disabled_rules:
   - trailing_whitespace       # Xcode handles this

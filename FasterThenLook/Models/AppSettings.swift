@@ -1,6 +1,6 @@
 //
 //  AppSettings.swift
-//  Ride Up
+//  FasterThenLook
 //
 //  Created by Hubert Wojtowicz on 21/06/2026.
 //
@@ -9,14 +9,20 @@ import Foundation
 import SwiftData
 
 @Model
-class AppSettings {
+final class AppSettings {
     var distanceUnit: DistanceUnit
     var fuelUnit: FuelUnit
     var economyUnit: EconomyUnit
     var currency: String
     var notifyRepeatDays: Int
 
-    init(distanceUnit: DistanceUnit, fuelUnit: FuelUnit, economyUnit: EconomyUnit, currency: String, notifyRepeatDays: Int){
+    init (
+        distanceUnit: DistanceUnit,
+        fuelUnit: FuelUnit,
+        economyUnit: EconomyUnit,
+        currency: String,
+        notifyRepeatDays: Int
+    ) {
         self.distanceUnit = distanceUnit
         self.fuelUnit = fuelUnit
         self.economyUnit = economyUnit

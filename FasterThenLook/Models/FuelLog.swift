@@ -1,6 +1,6 @@
 //
 //  FuelLog.swift
-//  Ride Up
+//  FasterThenLook
 //
 //  Created by Hubert Wojtowicz on 21/06/2026.
 //
@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class FuelLog {
+final class FuelLog {
     var date: Date = Date()
     var odometer: Double
     var isFull: Bool
@@ -33,19 +33,17 @@ class FuelLog {
         secondaryAmount: Double? = nil,
         secondaryPricePerUnit: Double? = nil,
         secondaryPriceTotal: Double? = nil,
+        primaryEconomy: Double?,
+        secondaryEconomy: Double?,
         car: Car
     ) {
         self.odometer = odometer
         self.isFull = isFull
-        if let primaryAmount, let primaryPricePerUnit {
-            self.primaryEconomy = primaryAmount / primaryPricePerUnit
-        }
         self.primaryAmount = primaryAmount
         self.primaryPricePerUnit = primaryPricePerUnit
         self.primaryPriceTotal = primaryPriceTotal
-        if let secondaryAmount, let secondaryPricePerUnit {
-            self.secondaryEconomy = secondaryAmount / secondaryPricePerUnit
-        }
+        self.primaryEconomy = primaryEconomy
+        self.secondaryEconomy = secondaryEconomy
         self.car = car
     }
 }
