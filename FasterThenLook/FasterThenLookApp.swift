@@ -12,7 +12,11 @@ import SwiftData
 struct FasterThenLookApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            AppSettings.self,
+            Car.self,
+            FuelLog.self,
+            MaintenanceItem.self,
+            RepairLog.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

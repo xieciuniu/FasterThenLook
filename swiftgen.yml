@@ -1,0 +1,22 @@
+input_dir: FasterThenLook
+output_dir: FasterThenLook/Generated
+
+strings:
+  inputs:
+    - Resources/Strings/en.lproj/Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      output: Strings+Generated.swift
+      params:
+        enumName: L10n
+        publicAccess: false
+
+xcassets:
+  inputs:
+    - Resources/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: Assets+Generated.swift
+      params:
+        enumName: Asset
+        publicAccess: false

@@ -1,0 +1,71 @@
+included:
+  - FasterThenLook
+
+excluded:
+ # - FasterThenLook/App/ContentView.swift  # remove once it's real
+
+disabled_rules:
+  - trailing_whitespace       # Xcode handles this
+
+opt_in_rules:
+  - array_init
+  - closure_spacing
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
+  - discouraged_object_literal
+  - empty_collection_literal
+  - empty_count
+  - empty_string
+  - enum_case_associated_values_count
+  - explicit_init
+  - fatal_error_message
+  - first_where
+  - flatmap_over_map_reduce
+  - force_unwrapping            # important — no ! in money code
+  - implicitly_unwrapped_optional
+  - last_where
+  - literal_expression_end_indentation
+  - multiline_arguments
+  - operator_usage_whitespace
+  - prefer_self_type_over_type_of_self
+  - redundant_nil_coalescing
+  - sorted_first_last
+  - toggle_bool
+  - unneeded_parentheses_in_closure_argument
+  - yoda_condition
+
+force_unwrapping:
+  severity: error              # unwraps are errors, not warnings
+
+line_length:
+  warning: 120
+  error: 160
+  ignores_comments: true
+  ignores_urls: true
+
+type_body_length:
+  warning: 250
+
+file_length:
+  warning: 400
+  error: 600
+
+function_body_length:
+  warning: 40
+  error: 60
+
+identifier_name:
+  min_length: 2
+
+custom_rules:
+  no_print:
+    name: "No print statements"
+    regex: '^\s*print\('
+    message: "Use structured logging instead of print(). Remove before committing."
+    severity: warning
+
+  decimal_not_double:
+    name: "Use Decimal for money"
+    regex: '(price|amount|total|tax|tip|cost)\s*:\s*Double'
+    message: "Use Decimal for monetary values, not Double."
+    severity: error
